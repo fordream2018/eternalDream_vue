@@ -1,0 +1,23 @@
+<template>
+  <div class="home_main">
+     <h>this is a home main page</h>
+  </div>
+</template>
+
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+
+@Component
+export default class HomeMain extends Vue {
+  @Prop() private msg!: string;
+  private name:string="11111";
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="less">
+  .home_main{
+
+  }
+</style>
+3

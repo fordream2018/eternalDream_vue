@@ -2,14 +2,14 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "strict": true,
+    "strict": false,
     "jsx": "preserve",
-    "importHelpers": true,
+    "importHelpers": false,
     "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
+    "experimentalDecorators": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": false,
+    "sourceMap": false,
     "baseUrl": ".",
     "types": [
       "webpack-env"
