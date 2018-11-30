@@ -1,6 +1,6 @@
 <template>
   <div class="home_main">
-     <h>this is a home main page</h>
+     <h1>this is a home main page</h1>
   </div>
 </template>
 
@@ -20,4 +20,3 @@ export default class HomeMain extends Vue {
 
   }
 </style>
-3

@@ -1,13 +1,20 @@
 {
   "name": "dream-vue",
   "version": "0.1.0",
-   "private": true,
+  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "keywords": [
+    "highcharts",
+    "wrapper",
+    "vue"
+  ],
   "dependencies": {
+    "highcharts-vue": "^1.2.0",
+    "highcharts": "^6.1.0",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",

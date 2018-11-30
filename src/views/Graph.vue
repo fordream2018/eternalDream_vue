@@ -8,6 +8,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import GraphMain from '@/components/graph/graph_main.vue'; // @ is an alias to /src
 
+
 @Component({
   components: {
       GraphMain,

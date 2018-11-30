@@ -19,18 +19,24 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: inline-flex;
 }
 #nav {
-  height:50px;
-  line-height: 50px;
-  padding: 30px;
+  width: 200px;
+  padding-top: 30px;
+  display: grid;
+  height: 205px;
   a {
     font-weight: bold;
     color: #2c3e50;
     text-decoration:none;
+    margin-top: 20px;
     &.router-link-exact-active {
       color: #42b983;
     }
   }
+}
+#nav+div {
+    width: calc(100vw - 240px);
 }
 </style>
