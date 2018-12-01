@@ -13,8 +13,8 @@
     "vue"
   ],
   "dependencies": {
+    "highcharts": "^6.2.0",
     "highcharts-vue": "^1.2.0",
-    "highcharts": "^6.1.0",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",

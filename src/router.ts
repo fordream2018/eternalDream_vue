@@ -23,7 +23,19 @@ export default new Router({
         {
             path: '/list',
             name: 'list',
-            component: () => import(/* webpackChunkName: "about" */ './views/List.vue')
+            component: () => import(/* webpackChunkName: "about" */ './views/List.vue'),
+            children: [
+              {
+                path: '/list/table',
+                name: 'table',
+                component: () => import(/* webpackChunkName: "about" */ './components/list/sublist/Table.vue')
+              },
+              {
+                path: '/list/listing',
+                name: 'listing',
+                component: () => import(/* webpackChunkName: "about" */ './components/list/sublist/Listing.vue')
+              }
+            ]
         },
         {
             path: '/graph',

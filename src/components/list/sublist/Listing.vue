@@ -1,7 +1,6 @@
 <template>
   <div class="list_main">
      {{name}}
-     <router-view/>
   </div>
 </template>
 
@@ -11,7 +10,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class ListMain extends Vue {
   @Prop() private msg!: string;
-  private name:string="list page";
+  private name:string="可拖动的列表";
 }
 </script>
 
