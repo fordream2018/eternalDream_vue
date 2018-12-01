@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">首页 &#160;&nbsp;&nbsp;</router-link>
+      <router-link to="/">首页</router-link>
       <router-link to="/list">
         <span>列表</span>
         <div class="subNav">
@@ -9,9 +9,9 @@
           <router-link to="/list/listing">列表</router-link>
         </div>
       </router-link>
-      <router-link to="/graph">图形&nbsp;&nbsp;&nbsp;</router-link>
-      <router-link to="/map">地图&nbsp;&nbsp;&nbsp;</router-link>
-      <router-link to="/about">关于&nbsp;&nbsp;&nbsp;</router-link>
+      <router-link to="/graph">图形</router-link>
+      <router-link to="/map">地图</router-link>
+      <router-link to="/about">关于</router-link>
 
     </div>
     <router-view/>
@@ -55,9 +55,8 @@
 .subNav{
   display: none;
   position: relative;
-  left: -20px;
-  top: 20px;
-  padding-bottom: 10px;  
+  margin-left: -20px;
+  margin-top: 20px; 
   >a{
     font-weight: bold;
     color: #2c3e50;
