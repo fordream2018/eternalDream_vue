@@ -3,8 +3,6 @@
     <div class="row">
       <highcharts class="chart" :options="chartOptions" :updateArgs="updateArgs"></highcharts>
       <div>
-        <h3>Flexibly change the value of each point:</h3>
-        <h4>Points:</h4>
         <form class="row points">
           <div v-for="index in 8" :key="index">
             <p>{{index}}</p>

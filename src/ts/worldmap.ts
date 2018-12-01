@@ -1,4 +1,7 @@
 /* global Highcharts */
+import Highcharts from 'highcharts'
+import mapInit from 'highcharts/modules/map'
+mapInit(Highcharts);
 (function (factory) {
   if (typeof module === 'object' && module.exports) {
     module.exports = factory
