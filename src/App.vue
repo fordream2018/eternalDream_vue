@@ -50,7 +50,7 @@
 #nav+div {
     width: calc(100vw - 240px);
     position:absolute;
-    right:0;
+    right:5px;
 }
 .subNav{
   display: none;

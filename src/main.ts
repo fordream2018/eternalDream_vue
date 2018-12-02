@@ -5,6 +5,7 @@ import store from './store'
 import './registerServiceWorker'
 import HighchartsVue from 'highcharts-vue'
 import Highcharts from 'highcharts'
+import BaiduMap from 'vue-baidu-map'
 import stockInit from 'highcharts/modules/stock'
 import './ts/worldmap'
 
@@ -13,6 +14,7 @@ stockInit(Highcharts)
 addWorldMap(Highcharts)*/
 
 Vue.use(HighchartsVue)
+Vue.use(BaiduMap,{ak:'aQQnKZuq0WCU3GS52jFpElykzLR1ayH0'})
 Vue.config.productionTip = false
 
 new Vue({
