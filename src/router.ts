@@ -23,6 +23,7 @@ export default new Router({
         {
             path: '/list',
             name: 'list',
+            redirect: '/list/table',
             component: () => import(/* webpackChunkName: "about" */ './views/List.vue'),
             children: [
               {
@@ -46,6 +47,19 @@ export default new Router({
             path: '/map',
             name: 'map',
             component: () => import(/* webpackChunkName: "about" */ './views/Map.vue')
+        },
+        {
+            path: '/three',
+            name: 'three',
+            component: () => import('./views/Three.vue'),
+            redirect: '/three/demo1',
+            children: [
+                {
+                    path: '/three/demo1',
+                    name: 'demo1',
+                    component: () => import('./components/three/subThree/Demo1.vue')
+                }
+            ]
         }
     ]
 })

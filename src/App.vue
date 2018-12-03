@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/" exact>首页</router-link>
+
       <router-link to="/list">
         <span>列表</span>
         <div class="subNav">
@@ -9,10 +10,17 @@
           <router-link to="/list/listing">列表</router-link>
         </div>
       </router-link>
+
       <router-link to="/graph">图形</router-link>
       <router-link to="/map">地图</router-link>
-      <router-link to="/about">关于</router-link>
 
+      <router-link to="/three">
+        <span>三维</span>
+        <div class="subNav">
+          <router-link to="/three/demo1">DEMO1</router-link>
+        </div>
+      </router-link>
+      <router-link to="/about">关于</router-link>
     </div>
     <router-view/>
   </div>
@@ -32,6 +40,7 @@
   width: 200px;
   display: grid;
   position: absolute;
+
   >a {
     font-weight: bold;
     color: #2c3e50;
@@ -56,7 +65,8 @@
   display: none;
   position: relative;
   margin-left: -20px;
-  margin-top: 20px; 
+  margin-top: 20px;
+  font-size: 15px;
   >a{
     font-weight: bold;
     color: #2c3e50;
