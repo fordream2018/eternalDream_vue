@@ -20,6 +20,6 @@
 <style scoped lang="less">
   .three{
     width: 100%;
-    height: 100%;
+    height: auto;
   }
 </style>

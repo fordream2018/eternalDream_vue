@@ -27,7 +27,7 @@
         }
 
         destroyed() {
-            console.logc("destroyed");
+            console.log("destroyed");
         }
     }
 </script>
