@@ -1,11 +1,11 @@
 <template>
   <div class="list_main">
-      <div>
+      <div class="table">
           <el-table
                   :data="tempList"
                   stripe
                   border style="margin-bottom:14px;"
-                  :empty-text="emptyText" height="600">
+                  :empty-text="emptyText" height="500">
               <el-table-column property="name" label="债券名称" width="228"></el-table-column>
               <el-table-column property="marketValue" label="市值" width="228" align="right"></el-table-column>
               <el-table-column property="type" label="债券类型"></el-table-column>
@@ -171,8 +171,11 @@ export default class TableMain extends Vue {
 <style scoped lang="less">
 .list_main{
     width:95%;
-    height: 700px;
     border:1px solid #aaaaaa;
     overflow: auto;
+    .table{
+        width:95%;
+        height: 550px;
+    }
 }
 </style>
