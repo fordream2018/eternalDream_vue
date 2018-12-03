@@ -11,6 +11,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
     methods:{
 		initMap(){
 	  		// 百度地图API功能
+	  		/* global BMap*/
 			let map = new BMap.Map("allmap");    // 创建Map实例
 			map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
 			//添加地图类型控件
@@ -22,15 +23,16 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 			map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
 			map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
 	  	}
-    },
-    mounted():void{
-	  	this.initMap()
-	}
+    }
+    
 })
 export default class MapMain extends Vue {
   @Prop() private msg!: string;
   private name:string="list page";
   
+  mounted(){
+  	this.initMap()
+  }
 }
 </script>
 
