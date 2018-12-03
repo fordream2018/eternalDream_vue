@@ -1,11 +1,13 @@
 <template>
   <div class="map_main">
-     <baidu-map id="allmap" class="map"></baidu-map>
+     <baidu-map id="allmap" class="map" @ready="initMap"></baidu-map>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { BaiduMap } from 'vue-baidu-map';
+
 
 @Component({
     methods:{
@@ -29,10 +31,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class MapMain extends Vue {
   @Prop() private msg!: string;
   private name:string="list page";
+
   
-  mounted(){
-  	this.initMap()
-  }
 }
 </script>
 
