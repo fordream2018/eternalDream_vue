@@ -18,6 +18,7 @@ export default class ListMain extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 .list_main{
-
+    width: 100%;
+    height: 100%;
 }
 </style>
