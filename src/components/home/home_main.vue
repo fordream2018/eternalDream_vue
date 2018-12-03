@@ -19,15 +19,15 @@
          * 钩子函数调用
          */
         created() {
-            alert("fuck");
+            console.log("created");
         };
 
         mounted() {
-            alert("fuck");
+            console.log("mounted");
         }
 
         destroyed() {
-            alert("fuck");
+            console.logc("destroyed");
         }
     }
 </script>
