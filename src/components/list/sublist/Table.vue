@@ -1,6 +1,7 @@
 <template>
     <div class="list_main">
         <h2>表格设计</h2>
+        {{demo}}
         <div class="table">
             <el-table
                     :data="tempList"
@@ -24,11 +25,13 @@
 
             </div>
         </div>
+        //测试＠watch
+        <input type="text" v-model="pageSize"/>
     </div>
 </template>
 
 <script lang="ts">
-    import {Component, Prop, Vue} from 'vue-property-decorator';
+    import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
     import {CreateElement} from "vue";
 
     @Component
@@ -138,21 +141,18 @@
         }];
 
         handleSizeChange1(pageSize) {
-            debugger;
             this.pageSize = pageSize;
             this.handleCurrentChange1(this.currentPage1);
         };
 
         handleCurrentChange1(currentPage) {//页码切换
-            debugger;
-            this.currentPage1 = currentPage
+            this.currentPage1 = currentPage;
             this.currentChangePage(this.bondsAllList, currentPage)
 
         };
 
         //分页方法（重点）
         currentChangePage(list, currentPage) {
-            debugger;
             let from = (currentPage - 1) * this.pageSize;
             let to = currentPage * this.pageSize;
             this.tempList = [];
@@ -163,10 +163,24 @@
             }
         };
 
-        @CreateElement
-        created(): void {
+
+        private created() {
             this.tempList = this.bondsAllList;
-        }
+        };
+
+        //vue3计算属性
+        get demo() {
+            return "lifei";
+        };
+
+        //vue3 watch监听方法
+        @Watch('pageSize')
+        private pageSizeOnChange(newVal: number) {
+            console.info(newVal);
+        };
+
+        //使用vuex
+
     }
 </script>
 
