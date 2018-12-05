@@ -39,5 +39,6 @@ export default class MapMain extends Vue {
 <style scoped lang="less">
 .map{
 	height:600px;
+    margin: 0 auto;
 }
 </style>

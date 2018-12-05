@@ -1,6 +1,5 @@
 <template>
   <div class="list_main">
-     {{name}}
      <router-view/>
   </div>
 </template>
@@ -18,7 +17,8 @@ export default class ListMain extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 .list_main{
-    width: 100%;
+    width: 98%;
     height: 100%;
+    margin: 0 auto;
 }
 </style>

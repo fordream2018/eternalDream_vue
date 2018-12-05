@@ -16,3 +16,10 @@
     export default class List extends Vue {}
 </script>
 
+<style scoped lang="less">
+  .list{
+    width: 100%;
+    height: auto;
+  }
+</style>
+

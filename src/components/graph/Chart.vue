@@ -111,6 +111,11 @@ export default {
 input[type="color"]::-webkit-color-swatch-wrapper {
   padding: 0;
 }
+
+.chartElem{
+  width:100%;
+  height:100%;
+}
 #colorPicker {
   border: 0;
   padding: 0;
