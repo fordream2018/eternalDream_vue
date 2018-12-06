@@ -1,7 +1,6 @@
 <template>
     <div class="list_main">
         <h2>表格设计</h2>
-        {{demo}}
         <div class="table">
             <el-table
                     :data="tempList"
@@ -26,7 +25,7 @@
             </div>
         </div>
         //测试＠watch
-        <input type="text" v-model="pageSize"/>
+       <!-- <input type="text" v-model="pageSize"/>-->
     </div>
 </template>
 
