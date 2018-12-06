@@ -19,6 +19,7 @@
     "register-service-worker": "^1.0.0",
     "three": "^0.99.0",
     "vue": "^2.5.17",
+    "vue-amap": "^0.5.8",
     "vue-baidu-map": "^0.21.14",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
