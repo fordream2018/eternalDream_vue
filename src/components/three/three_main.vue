@@ -1,6 +1,5 @@
 <template>
   <div class="three_main">
-      <span>this is a home main page</span>
       <router-view/>
   </div>
 </template>
