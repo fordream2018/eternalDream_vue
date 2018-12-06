@@ -10,10 +10,14 @@
                     <router-link to="/list/listing">列表</router-link>
                 </div>
             </router-link>
-
             <router-link to="/graph">图形</router-link>
-            <router-link to="/map">地图</router-link>
-
+            <router-link to="/map">
+              <span>地图</span>
+              <div class="subNav">
+                <router-link to="/map/baidu">百度地图</router-link>
+                <router-link to="/map/gaode">高德题图</router-link>
+              </div>
+            </router-link>
             <router-link to="/three">
                 <span>三维</span>
                 <div class="subNav">

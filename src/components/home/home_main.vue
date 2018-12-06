@@ -1,6 +1,6 @@
 <template>
     <div class="home_main">
-        <h1>this is a home main page</h1>
+        <h1>这个我们的主场</h1>
     </div>
 </template>
 
@@ -35,6 +35,6 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
     .home_main {
-
+     font-size:30px;
     }
 </style>

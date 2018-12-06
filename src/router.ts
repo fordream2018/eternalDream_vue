@@ -46,7 +46,19 @@ export default new Router({
         {
             path: '/map',
             name: 'map',
-            component: () => import(/* webpackChunkName: "about" */ './views/Map.vue')
+            component: () => import(/* webpackChunkName: "about" */ './views/Map.vue'),
+            children: [
+              {
+                path: '/map/baidu',
+                name: 'baidu',
+                component: () => import(/* webpackChunkName: "about" */ './components/map/submap/BMap.vue')
+              },
+              {
+                path: '/map/gaode',
+                name: 'gaode',
+                component: () => import(/* webpackChunkName: "about" */ './components/map/submap/AMap.vue')
+              }
+            ]
         },
         {
             path: '/three',
