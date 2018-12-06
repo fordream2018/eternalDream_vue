@@ -47,8 +47,8 @@
 
 
             this.camera.position.z = 8;
-            this.camera.position.y = 1;
-            this.camera.position.x = 1;
+            this.camera.position.y = 0;
+            this.camera.position.x = 0;
             //渲染界面
             this.container.appendChild(this.renderer.domElement)
 
@@ -70,7 +70,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="less">
+<style scoped lang="less"　scoped>
     .sub_demo1 {
         height: 550px;
 

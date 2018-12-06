@@ -1,6 +1,6 @@
 <template>
-  <div class="map_main">
-     <baidu-map id="allmap" class="map" @ready="initMap"></baidu-map>
+  <div class="bmap">
+     <baidu-map id="allmap" class="bmapDemo" @ready="initMap"></baidu-map>
   </div>
 </template>
 
@@ -52,7 +52,7 @@ export default class MapMain extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-.map{
+.bmapDemo{
 	height:600px;
 }
 </style>

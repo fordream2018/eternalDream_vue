@@ -1,6 +1,6 @@
 <template>
   <div class="amap">
-    <el-amap vid="amapDemo" :zoom="zoom" :center="center" class="amap-demo">
+    <el-amap vid="amapDemo" :zoom="zoom" :center="center" class="amapDemo">
       <el-amap-marker v-for="marker in markers" :center="marker.center" :radius="marker.radius" :fill-color="marker.fillColor" :fill-opacity="marker.fillOpacity" :events="marker.events"></el-amap-marker>
     </el-amap>
   </div>
@@ -13,11 +13,11 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class MapMain extends Vue {
     @Prop() private msg!: string;
-    private zoom:number= 12;
-    private center:array=[121.5273285, 31.21515044];
+    private zoom:number= 11;
+    private center:array=[109,34.3];
     private markers:array= [
         {
-          center: [121.5273285, 31.21515044],
+          center: [109,34.3],
           radius: 20,
           fillOpacity: 1,
           fillColor: 'rgba(0,0,255,1)',
@@ -33,7 +33,7 @@ export default class MapMain extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-.amap{
+.amapDemo{
 	height:600px;
 }
 </style>
