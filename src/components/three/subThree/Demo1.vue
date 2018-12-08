@@ -38,6 +38,7 @@
     import * as THREE from 'three'
     import {Map} from "vue-baidu-map/types/map";
     import * as STATUS  from 'three-stats';
+    import * as dat from 'dat.gui';
 
     @Component
     export default class SubThreeDemo1 extends Vue {
@@ -52,13 +53,14 @@
         private geometry: any;//物体
         private material: any;//材料
         private object: any;//几何体
-        private stats: Stats;//监视器
+        private stats: any;//监视器
+        private guiCon:any;//控制器
         /* private rightEffect= new Map<string, Array>();*/
         private rightEffect: Array = [];
         private isShowEffect: boolean = false;
         private timer: any;
         private fullscreen: boolean = false;
-
+        private rotationSpeed:number;
         initData() {
             let _this = this;
             this.rightEffect = [
@@ -153,6 +155,35 @@
             this.stats.domElement.style.left = '0px';
             this.stats.domElement.style.top = '0px';
             this.container.appendChild(this.stats.domElement);
+
+            this.guiCon=new dat.GUI();
+            this.guiCon.domElement.style.position = 'absolute';
+            this.guiCon.domElement.style.right = '0px';
+            this.guiCon.domElement.style.top = '100px';
+
+            this.container.appendChild(this.guiCon.domElement);
+            let controllers=new function () {
+                this.rotationSpeed = 0.02;
+                this.x = 1;
+                this.y = 1;
+                this.z = 1;
+                this.width = 50;
+                this.height = 60;
+            };
+
+            let f1=this.guiCon.addFolder('Position');
+            f1.add(controllers, 'x');
+            f1.add(controllers, 'y');
+            f1.add(controllers, 'z');
+            let f2=this.guiCon.addFolder('Size');
+            f2.add(controllers, 'width');
+            f2.add(controllers, 'height');
+            //f2.open();
+            /*this.guiCon.add(controllers, 'x', 0, 0.5);
+            this.guiCon.add(controllers, 'y', 0, 0.5);
+            this.guiCon.add(controllers, 'z', 0, 0.5);*/
+            //this.guiCon.add(this.controls, 'rotationSpeed', 0, 0.5);
+            //this.guiCon.addMaterial("standard_material", this.material);
         };
         //动画效果
         private animate(): void {
@@ -162,6 +193,9 @@
             this.object.rotation.y += 0.1;
             //this.cube.rotation.y += 0.01;
             this.renderer.render(this.scene, this.camera);
+        };
+        private controls(){
+            this.rotationSpeed = 0.02;
         };
 
 
