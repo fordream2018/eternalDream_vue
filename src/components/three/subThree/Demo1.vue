@@ -148,7 +148,7 @@
         //性能监控
         private initStats(): void {
             this.stats = new STATUS.Stats();
-            this.stats.setMode(1);
+            this.stats.setMode(0);
             this.stats.domElement.style.position = 'absolute';
             this.stats.domElement.style.left = '0px';
             this.stats.domElement.style.top = '0px';
@@ -158,8 +158,8 @@
         private animate(): void {
             this.stats.update();
             requestAnimationFrame(this.animate);
-            // this.cube.rotation.x += 0.01;
-            this.object.rotation.y += 0.01;
+            this.object.rotation.x += 0.1;
+            this.object.rotation.y += 0.1;
             //this.cube.rotation.y += 0.01;
             this.renderer.render(this.scene, this.camera);
         };
@@ -243,6 +243,7 @@
                     line-height: 60px;
                     margin-left: 30px;
                     font-size: 20px;
+                    cursor: pointer;
                     a {
 
                     }
