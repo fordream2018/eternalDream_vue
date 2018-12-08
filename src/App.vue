@@ -48,7 +48,7 @@
         width: 200px;
         display: grid;
         position: absolute;
-
+        z-index: 1000;
         > a {
             font-weight: bold;
             color: #2c3e50;
