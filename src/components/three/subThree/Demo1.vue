@@ -172,12 +172,12 @@
             };
 
             let f1=this.guiCon.addFolder('Position');
-            f1.add(controllers, 'x');
-            f1.add(controllers, 'y');
-            f1.add(controllers, 'z');
+            f1.add(controllers, 'x',1,100);
+            f1.add(controllers, 'y',1,100);
+            f1.add(controllers, 'z',1,100);
             let f2=this.guiCon.addFolder('Size');
-            f2.add(controllers, 'width');
-            f2.add(controllers, 'height');
+            f2.add(controllers, 'width',10,100);
+            f2.add(controllers, 'height',10,100);
             //f2.open();
             /*this.guiCon.add(controllers, 'x', 0, 0.5);
             this.guiCon.add(controllers, 'y', 0, 0.5);
@@ -225,6 +225,7 @@
     .sub_demo1 {
         height: 750px;
         width: 100%;
+        background: #000000;
         .sub_nav_top {
             width: 30px;
             height: 30px;
