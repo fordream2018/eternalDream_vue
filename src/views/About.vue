@@ -6,19 +6,21 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
+    import { publicModule } from "../store/moudles/public.ts"
     import AboutMain from '@/components/about/about_main.vue'; // @ is an alias to /src
-    import { Action, Mutation, Getter, namespace } from 'vuex-class';
     @Component({
         components: {
             AboutMain,
         },
     })
     export default class About extends Vue {
-        @Getter('getIsShowRouter') isShowRouter;
-        @Action('changeIsShowRouter') changeIsShowRouter;
 
-        private created(){
-            this.changeIsShowRouter({ value: true })
+        get getIsShowRouter() {
+            return publicModule.isShowRouter // -> store.state.user.firstName
+        };
+
+        created(){
+            publicModule.changeIsShowRouter({isShow:true})
         }
     }
 </script>

@@ -6,7 +6,7 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import { Action, Mutation, Getter, namespace } from 'vuex-class';
+    import { publicModule } from "../store/moudles/public.ts";
     import HomeMain from '@/components/home/home_main.vue'; // @ is an alias to /src
     @Component({
         components: {
@@ -14,10 +14,8 @@
         },
     })
     export default class Home extends Vue {
-        @Getter('getIsShowRouter') isShowRouter;
-        @Action('changeIsShowRouter') changeIsShowRouter;
-        private created(){
-            this.changeIsShowRouter({ value: false })
+        created(){
+            publicModule.changeIsShowRouter({isShow:false});
         }
     }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div id="nav" v-if="isShowRouter">
+        <div id="nav" v-if="getIsShowRouter">
             <router-link to="/" exact>首页</router-link>
 
             <router-link to="/list">
@@ -32,14 +32,20 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import { Action, Mutation, Getter, namespace } from 'vuex-class';
+    import { publicModule } from "./store/moudles/public.ts"
 
     @Component({
         components: {
         },
     })
     export default class App extends Vue {
-        @Getter('getIsShowRouter') isShowRouter;
+        get getIsShowRouter() {
+            return publicModule.isShowRouter // -> store.state.user.firstName
+        };
+        created(){
+            publicModule.changeIsShowRouter({isShow:false})
+        }
+
     }
 </script>
 

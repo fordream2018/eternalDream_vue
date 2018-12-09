@@ -47,7 +47,7 @@ export default new Router({
         {
             path: '/map',
             name: 'map',
-            redirect: '/map/baidu',
+            redirect: '/map/gaode',
             component: () => import(/* webpackChunkName: "about" */ './views/Map.vue'),
             children: [
                 {

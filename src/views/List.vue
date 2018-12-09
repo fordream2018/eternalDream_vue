@@ -7,18 +7,16 @@
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
     import ListMain from '@/components/list/list_main.vue'; // @ is an alias to /src
-    import { Action, Mutation, Getter, namespace } from 'vuex-class';
+    import { publicModule } from "../store/moudles/public.ts"
     @Component({
         components: {
             ListMain,
         },
     })
     export default class List extends Vue {
-        @Getter('getIsShowRouter') isShowRouter;
-        @Action('changeIsShowRouter') changeIsShowRouter;
 
         private created(){
-            this.changeIsShowRouter({ value: true })
+            publicModule.changeIsShowRouter({isShow:true});
         }
     }
 </script>

@@ -6,6 +6,7 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
+    import { publicModule } from "../store/moudles/public.ts"
     import ThreeMain from '@/components/three/three_main.vue'; // @ is an alias to /src
 
     @Component({
@@ -13,7 +14,12 @@
             ThreeMain,
         },
     })
-    export default class Three extends Vue {}
+    export default class Three extends Vue {
+
+        private created(){
+            publicModule.changeIsShowRouter({isShow:true});
+        }
+    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

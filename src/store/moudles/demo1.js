@@ -6,33 +6,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Module, Mutation, Action } from "vuex-class-modules";
 import store from "../../store";
-let PublicModule = class PublicModule {
+let Demo1Module = class Demo1Module {
     constructor() {
         // state
-        this.isShowRouter = false;
+        this.name = "lifei";
     }
     // getters
-    get getIsShowRouter() {
-        return this.isShowRouter;
+    get getName() {
+        return this.name;
     }
     // mutations
-    setIsShowRouter(isShowRouter) {
-        this.isShowRouter = isShowRouter;
+    setName(name) {
+        this.name = name;
     }
     // actions
-    async changeIsShowRouter(item) {
+    async changeName(item) {
         //const user = await fetchUser()
-        debugger;
-        this.setIsShowRouter(item.isShow);
+        this.setName(item.name);
     }
 };
 __decorate([
     Mutation
-], PublicModule.prototype, "setIsShowRouter", null);
+], Demo1Module.prototype, "setName", null);
 __decorate([
     Action
-], PublicModule.prototype, "changeIsShowRouter", null);
-PublicModule = __decorate([
-    Module({ name: "public", store })
-], PublicModule);
-export const publicModule = new PublicModule();
+], Demo1Module.prototype, "changeName", null);
+Demo1Module = __decorate([
+    Module({ name: "demo1", store })
+], Demo1Module);
+export const demo1Module = new Demo1Module();
