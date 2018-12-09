@@ -1,7 +1,7 @@
 <template>
     <div class="home_main">
         <div class="sub_carousel" ref="carousel">
-            <el-carousel :interval="10000000" type="card" :height="fullHeight+'px' ">
+            <el-carousel :interval="5000" type="card" :height="fullHeight+'px' ">
                 <el-carousel-item v-for="item in homeItems" :key="item.index">
                     <div class="carousel-every" v-bind:style="{backgroundImage:'url('+item.backSrc+')',backgroundRepeat:'no-repeat', backgroundSize: '100% 100%'}">
                         <div class="info">
@@ -12,8 +12,6 @@
 
                         </div>
                     </div>
-
-
                 </el-carousel-item>
             </el-carousel>
         </div>
