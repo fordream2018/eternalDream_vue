@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div id="nav">
+        <div id="nav" v-if="isShowRouter">
             <router-link to="/" exact>首页</router-link>
 
             <router-link to="/list">
@@ -29,6 +29,19 @@
         <router-view/>
     </div>
 </template>
+
+<script lang="ts">
+    import { Component, Vue } from 'vue-property-decorator';
+    import { Action, Mutation, Getter, namespace } from 'vuex-class';
+
+    @Component({
+        components: {
+        },
+    })
+    export default class App extends Vue {
+        @Getter('getIsShowRouter') isShowRouter;
+    }
+</script>
 
 <style lang="less" scoped>
     @selectedItem: #42b983;

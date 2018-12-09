@@ -1,12 +1,8 @@
 <template>
     <div class="sub_demo1">
-        <div class="sub_nav">
-            <div class="sub_nav_inner"></div>
-            <div class="sub_nav_inner"></div>
-            <div class="sub_nav_inner"></div>
-            <div class="sub_nav_inner"></div>
+        <div class="sub_nav" v-on:click="toggle()">
+            <img src="../../../assets/images/fullscreen.png"/>
         </div>
-        <div class="sub_nav_top" v-on:click="toggle()"></div>
         <fullscreen ref="fullscreen" @change="fullscreenChange">
             <div class="three_nav" v-on:mouseenter="showEffect()" v-cloak>
                 <transition-group appear tag="ul" v-if="isShowEffect">
@@ -226,31 +222,14 @@
         height: 750px;
         width: 100%;
         background: #000000;
-        .sub_nav_top {
-            width: 30px;
-            height: 30px;
-            right: 30px;
-            top: 30px;
-            position: absolute;
-            z-index: 10;
-            opacity: 1;
-            cursor: pointer;
-        }
         .sub_nav {
             width: 30px;
             height: 30px;
             right: 30px;
             top: 30px;
             position: absolute;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            .sub_nav_inner {
-                height: 43%;
-                width: 43%;
-                border: 1px solid #ffffff;
-            }
-
+            display: block;
+            background-size:100% 100%;
         }
         .three_nav {
             width: 200px;

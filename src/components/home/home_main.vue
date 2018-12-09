@@ -1,9 +1,19 @@
 <template>
     <div class="home_main">
         <div class="sub_carousel" ref="carousel">
-            <el-carousel :interval="3000" type="card" :height="fullHeight+'px' ">
+            <el-carousel :interval="10000000" type="card" :height="fullHeight+'px' ">
                 <el-carousel-item v-for="item in homeItems" :key="item.index">
-                    <h3>{{ item.title }}</h3>
+                    <div class="carousel-every" v-bind:style="{backgroundImage:'url('+item.backSrc+')',backgroundRepeat:'no-repeat', backgroundSize: '100% 100%'}">
+                        <div class="info">
+                            <div class="title">{{ item.title }}</div>
+                            <div class="more"　v-on:click="enterEvery(item)">点击进入</div>
+                        </div>
+                        <div class="content">
+
+                        </div>
+                    </div>
+
+
                 </el-carousel-item>
             </el-carousel>
         </div>
@@ -31,33 +41,45 @@
             this.homeItems = [
                 {
                     title: "首页",
-                    src: "xxx",
-                    index: 1
+                    src:require("../../assets/images/home.gif"),
+                    index: 1,
+                    backSrc:require("../../assets/images/home.gif"),
+                    router:"/home"
                 },
                 {
                     title: "列表",
                     src: "xxx",
-                    index: 2
+                    index: 2,
+                    backSrc:require("../../assets/images/list.jpeg"),
+                    router:"/list"
                 },
                 {
                     title: "图形",
                     src: "xxx",
-                    index: 3
+                    index: 3,
+                    backSrc:require("../../assets/images/graph.gif"),
+                    router:"/graph"
                 },
                 {
                     title: "地图",
                     src: "xxx",
-                    index: 4
+                    index: 4,
+                    backSrc:require("../../assets/images/map.jpeg"),
+                    router:"/map"
                 },
                 {
                     title: "三维",
                     src: "xxx",
-                    index: 5
+                    index: 5,
+                    backSrc:require("../../assets/images/three.gif"),
+                    router:"/three"
                 },
                 {
                     title: "关于",
                     src: "xxx",
-                    index: 6
+                    index: 6,
+                    backSrc:require("../../assets/images/about.gif"),
+                    router:"/about"
                 },
             ];
 
@@ -76,7 +98,9 @@
 //            this.carouselHeight = tempHeight;
 //            this.carouselTop = (tempHeight  - this.$refs['carousel'].clientHeight) / 2;
         };
-
+        private enterEvery(item):void{
+            this.$router.push(item.router)
+        }
         /**
          * 钩子函数调用
          */
@@ -111,22 +135,57 @@
             position: fixed;
             left: 0px;
             top:100px;
+            .carousel-every{
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+            }
+            .info{
+                width: 100%;
+                height: 50px;
+                display: flex;
+                flex-direction:column;
+                //justify-content:center;
+                //align-items:center;
+                line-height: 50px;
+                font-size: 25px;
+                font-family:"Times New Roman",Times,serif;
+                color:#ffffff;
+                .more{
+                    height: 30px;
+                    width: 100%;
+                    font-size: 15px;
+                    color: #ffcad1;
+                    cursor: pointer;
+                    line-height: 30px;
+
+                }
+                .more:HOVER{
+                    font-size: 17px;
+                    background: #3b1e20;
+                }
+            }
+            .icon{
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: #ffffff;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 
-    .el-carousel__item h3 {
-        color: #475669;
-        font-size: 14px;
-        opacity: 0.75;
-        line-height: 200px;
-        margin: 0;
+    .el-carousel__item{
+        border-radius: 20px;
     }
-
     .el-carousel__item:nth-child(2n) {
-        background-color: #99a9bf;
+        background-color: black;
     }
 
     .el-carousel__item:nth-child(2n+1) {
-        background-color: #d3dce6;
+      background-color: black;
     }
 </style>
