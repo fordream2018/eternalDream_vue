@@ -25,119 +25,25 @@
             </div>
         </div>
         //测试＠watch
-       <!-- <input type="text" v-model="pageSize"/>-->
+        <!-- <input type="text" v-model="pageSize"/>-->
     </div>
 </template>
 
 <script lang="ts">
     import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
     import {CreateElement} from "vue";
+    import {tableModule} from "../../../store/moudles/list/table"
 
     @Component
     export default class TableMain extends Vue {
-        @Prop() private msg!:string;
+        @Prop() private msg: string;
         private name: string = "简单的表格 可横竖向滚动";
         private total1: number = 0;
         currentPage1: number = 1;
         pageSize: number = 10;
         private tempList: Array = [];
         private emptyText: string = "no data";
-        private bondsAllList: Array = [{
-            "name": "16协信01",
-            "marketValue": 691861.0999317318,
-            "type": "信用债",
-            "ratio": 0.0027959958264152343
-        }, {
-            "name": "16朗诗01",
-            "marketValue": 690131.4471819025,
-            "type": "信用债",
-            "ratio": 0.002789005836849196
-        }, {
-            "name": "16三盛01",
-            "marketValue": 688816.9110920322,
-            "type": "信用债",
-            "ratio": 0.0027836934447790073
-        }, {
-            "name": "17三鼎01",
-            "marketValue": 685426.7917023668,
-            "type": "信用债",
-            "ratio": 0.002769993065229573
-        }, {
-            "name": "16临开债",
-            "marketValue": 676640.4401650192,
-            "type": "信用债",
-            "ratio": 0.00273448506769905
-        }, {
-            "name": "16华讯01",
-            "marketValue": 614990.17198298,
-            "type": "信用债",
-            "ratio": 0.0024853398381849607
-        }, {
-            "name": "16花样03",
-            "marketValue": 614990.0028613778,
-            "type": "信用债",
-            "ratio": 0.0024853391547193142
-        }, {
-            "name": "15协信01",
-            "marketValue": 614987.6443837617,
-            "type": "信用债",
-            "ratio": 0.0024853296234802085
-        }, {
-            "name": "16三盛03",
-            "marketValue": 461240.73328782123,
-            "type": "信用债",
-            "ratio": 0.0018639972176101563
-        }, {
-            "name": "16山钢03",
-            "marketValue": 384367.27773985104,
-            "type": "信用债",
-            "ratio": 0.0015533310146751303
-        }, {
-            "name": "14甘公01",
-            "marketValue": 324002.01240352966,
-            "type": "信用债",
-            "ratio": 0.0013093788254893862
-        }, {
-            "name": "15新湖债",
-            "marketValue": 307493.82219188084,
-            "type": "信用债",
-            "ratio": 0.0012426648117401043
-        }, {
-            "name": "16珠管01",
-            "marketValue": 303035.16177009855,
-            "type": "信用债",
-            "ratio": 0.0012246461719698726
-        }, {
-            "name": "16重机债",
-            "marketValue": 299103.36126325984,
-            "type": "信用债",
-            "ratio": 0.0012087567140880767
-        }, {
-            "name": "17三鼎01",
-            "marketValue": 8163.960979194436,
-            "type": "信用债",
-            "ratio": 3.2992750751699765E-5
-        }, {
-            "name": "16重机债",
-            "marketValue": 1475.2323613477674,
-            "type": "信用债",
-            "ratio": 5.961808700804324E-6
-        }, {
-            "name": "14甘公01",
-            "marketValue": 723.1485963397557,
-            "type": "信用债",
-            "ratio": 2.92243697100979E-6
-        }, {
-            "name": "15新湖债",
-            "marketValue": 707.2357910413259,
-            "type": "信用债",
-            "ratio": 2.85812906700224E-6
-        }, {
-            "name": "16珠管01",
-            "marketValue": 153.74691109594042,
-            "type": "信用债",
-            "ratio": 6.213324058700521E-7
-        }];
+        private bondsAllList: Array=[];
 
         handleSizeChange1(pageSize) {
             this.pageSize = pageSize;
@@ -164,7 +70,8 @@
 
 
         private created() {
-            this.tempList = this.bondsAllList;
+            this.tempList = tableModule.getBondsAllList;
+            this.bondsAllList = tableModule.getBondsAllList;
         };
 
         //vue3计算属性
@@ -184,7 +91,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style  lang="less">
+<style lang="less">
     .list_main {
         width: 100%;
         overflow: auto;
