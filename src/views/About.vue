@@ -6,7 +6,7 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import { publicModule } from "../store/moudles/public.ts"
+    import { publicModule } from "../store/moudles/public"
     import AboutMain from '@/components/about/about_main.vue'; // @ is an alias to /src
     @Component({
         components: {

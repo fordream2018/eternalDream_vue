@@ -7,7 +7,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import MapMain from '@/components/map/map_main.vue'; // @ is an alias to /src
-import { publicModule } from "../store/moudles/public.ts"
+import { publicModule } from "../store/moudles/public"
 @Component({
   components: {
       MapMain,

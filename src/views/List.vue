@@ -7,7 +7,7 @@
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
     import ListMain from '@/components/list/list_main.vue'; // @ is an alias to /src
-    import { publicModule } from "../store/moudles/public.ts"
+    import { publicModule } from "../store/moudles/public"
     @Component({
         components: {
             ListMain,

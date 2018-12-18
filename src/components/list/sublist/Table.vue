@@ -24,8 +24,6 @@
 
             </div>
         </div>
-        //测试＠watch
-        <!-- <input type="text" v-model="pageSize"/>-->
     </div>
 </template>
 

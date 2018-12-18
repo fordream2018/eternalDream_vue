@@ -32,7 +32,7 @@
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import { publicModule } from "./store/moudles/public.ts"
+    import { publicModule } from './store/moudles/public';
 
     @Component({
         components: {

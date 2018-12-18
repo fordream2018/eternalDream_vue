@@ -3,7 +3,7 @@
         <div class="list_content">
             <div t_table>
                 <el-table
-                        :data="tableData.filter(data =>!search || data.name.toLowerCase().includes(search.toLowerCase()))"
+                        :data="tempList.filter(data=>!search || data.name.toLowerCase().includes(search.toLowerCase()))"
                         style="width: 100%" height="600">
                     <el-table-column label="Date" prop="date">
                     </el-table-column>
@@ -23,6 +23,17 @@
                         </template>
                     </el-table-column>
                 </el-table>
+                <div class="paginationClass">
+                    <el-pagination
+                            @size-change="handleSizeChange"
+                            @current-change="handleCurrentChange" :current-page="currentPage"
+                            :page-sizes="[10, 20, 50, 100]"
+                            :page-size="pageSize" layout="total, sizes, prev, pager, next, jumper"
+                            class="pagination"
+                            :total="tableData.length">
+                    </el-pagination>
+
+                </div>
             </div>
 
         </div>
@@ -30,69 +41,22 @@
 </template>
 
 <script lang="ts">
-    import {Component, Prop, Vue} from 'vue-property-decorator';
-    import {tableModule} from "../../../store/moudles/list/table"
-
+    import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
+    import {listModule} from "../../../store/moudles/list/listing"
     @Component
     export default class ListMain extends Vue {
         @Prop() private msg: string;
         private name: string = "可拖动的列表";
         private search: String;
-        private tableData: Array = [{
-            date: '2016-05-02',
-            name: '李飞１',
-            address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-            date: '2016-05-04',
-            name: '李飞２',
-            address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-            date: '2016-05-01',
-            name: '李飞３',
-            address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-            date: '2016-05-03',
-            name: '李飞４',
-            address: '上海市普陀区金沙江路 1516 弄'
-        },
-            {
-                date: '2016-05-02',
-                name: '李飞５',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '李飞６',
-                address: '上海市普陀区金沙江路 1517 弄'
-            }, {
-                date: '2016-05-01',
-                name: '李飞７',
-                address: '上海市普陀区金沙江路 1519 弄'
-            }, {
-                date: '2016-05-03',
-                name: '李飞８',
-                address: '上海市普陀区金沙江路 1516 弄'
-            },
-            {
-                date: '2016-05-02',
-                name: '李飞９',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '李飞10',
-                address: '上海市普陀区金沙江路 1517 弄'
-            }, {
-                date: '2016-05-01',
-                name: '李飞11',
-                address: '上海市普陀区金沙江路 1519 弄'
-            }, {
-                date: '2016-05-03',
-                name: '李飞1２',
-                address: '上海市普陀区金沙江路 1516 弄'
-            }];
+        private total1: number = 0;
+        private　currentPage: number = 1;
+        private　pageSize: number = 10;
+        private tempList: Array = [];
+        private tableData: Array = [];
 
 
         get getBondsAllList() {
-            return tableModule.getBondsAllList;
+            return listModule.getTableData;
         }
 
         /**
@@ -153,7 +117,7 @@
                 type: 'warning'
             }).then(() => {
                 //
-                _this.tableData.splice(index, 1);
+                listModule.changeTableData(index,row);
                 _this.$message({
                     type: 'success',
                     message: '删除成功!'
@@ -166,13 +130,35 @@
             });
         };
 
+        private handleSizeChange(pageSize) {
+            this.pageSize = pageSize;
+            this.handleCurrentChange(this.currentPage);
+        };
+        private handleCurrentChange(currentPage) {//页码切换
+            this.currentPage= currentPage;
+            this.currentChangePage(listModule.getTableData, currentPage)
+        };
+
+        //分页方法（重点）
+        private currentChangePage(list, currentPage) {
+            let from = (currentPage - 1) * this.pageSize;
+            let to = currentPage * this.pageSize;
+            this.tempList = [];
+            for (; from < to; from++) {
+                if (list[from]) {
+                    this.tempList.push(list[from]);
+                }
+            }
+        };
 
         created() {
+            debugger;
             this.search = "";
+            this.tempList = listModule.getTableData;
+            this.tableData=listModule.getTableData;
         };
 
         mounted() {
-            //this.search="";
         };
 
         destored() {
@@ -189,7 +175,7 @@
         .list_content {
             width: 100%;
             height: auto;
-            background: red;
+            background: #000000;
         }
         .t_table {
 
@@ -197,5 +183,14 @@
     }
     .el-message-box{
         width: 40% ;
+    }
+    .pagination {
+        background: #303133;
+        .el-pagination__total {
+            color: #ffffff;
+        }
+        .el-input__inner {
+            color: #303133;
+        }
     }
 </style>
