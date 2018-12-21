@@ -17,7 +17,6 @@ let PublicModule = class PublicModule {
     // actions
     async changeIsShowRouter(item) {
         //const user = await fetchUser()
-        debugger;
         this.setIsShowRouter(item.isShow);
     }
 };

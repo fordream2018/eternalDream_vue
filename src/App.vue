@@ -58,9 +58,10 @@
         text-align: center;
         color: #2c3e50;
         display: inline-flex;
-        background: #05040d;
+        background: black;
         height: auto;
         font-family: "Microsoft Yahei", STHeiti, Arial, SimSun;
+        width:100%;
     }
 
     #nav {
