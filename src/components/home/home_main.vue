@@ -6,6 +6,7 @@
         <HomeCarousel/>
         <!--开发案例-->
         <DemoCase/>
+        <HomeReact/>
         <SolutionTech/>
         <Footter/>
     </div>
@@ -21,6 +22,8 @@
     import HomeCarousel from "./sub/HomeCarousel";
     import DemoCase from "./sub/DemoCase";
     import SolutionTech from "./sub/SolutionTech";
+    import HomeReact from "./sub/HomeReact";
+
     @Component({
         components: {
             Footter,
@@ -28,13 +31,11 @@
             HomeCarousel,
             DemoCase,
             SolutionTech,
+            HomeReact,
         },
     })
     export default class HomeMain extends Vue {
         @Prop() private msg: string;
-        private homeItems: Array;
-        private isShowHander: Boolean = false;
-
         /**
          * 钩子函数调用
          */

@@ -4,9 +4,11 @@
             <h3>解决方案</h3>
             <p>专业的事情交给专业的人来做     我们为您提供更为专业的解决方案</p>
         </div>
-
+        <div class="solution_detail">
+            <div class="detail_inner">了解更多</div>
+        </div>
         <div class="solution_content">
-            <el-carousel :interval="5000" type="card" height="400px">
+            <el-carousel :interval="5000" type="card" height="350px">
                 <el-carousel-item v-for="item in solutionItems" :key="item.index">
                     <div class="carousel-every"
                          v-bind:style="{backgroundImage:'url('+item.backSrc+')',backgroundRepeat:'no-repeat', backgroundSize: '100% 100%'}">
@@ -21,10 +23,6 @@
                 </el-carousel-item>
             </el-carousel>
         </div>
-
-        <div class="solution_detail">
-            <div class="detail_inner">细  节．．．</div>
-        </div>
     </div>
 </template>
 
@@ -37,6 +35,7 @@
     export default class SolutionTech extends Vue {
 
         private solutionItems: Array = [];
+        private isShowMore: boolean = false;
 
         private init(): void {
             this.solutionItems = [
@@ -82,6 +81,8 @@
             this.$router.push(item.router)
         }
 
+
+
         /**
          * 钩子函数调用
          */
@@ -110,6 +111,7 @@
         .solution_hander {
             width: 100%;
             height: auto;
+            margin-bottom: 50px;
             h3 {
                 font-size: 30px;
                 font-weight: 500 !important;
@@ -121,12 +123,13 @@
         }
 
         .solution_content {
-            width: 100%;
+            width: 80%;
             height: auto;
-            margin-top: 50px;
+            margin: 0 auto;
             .content_inner {
                 width: 100%;
                 height: 500px;
+                margin: 0 auto;
             }
             ._inner {
 
@@ -136,6 +139,7 @@
                 width: 100%;
                 height: 100%;
                 border-radius: 20px;
+
             }
             .info {
                 width: 100%;
@@ -173,24 +177,27 @@
             }
         }
 
-
-        .solution_detail{
+        .solution_detail {
             width: 100%;
             height: 100px;
-            margin-top: 30px;
+            margin-bottom: 30px;
             display: flex;
             flex-direction: column;
-            justify-content:center;
-            align-items:center;
-            .detail_inner{
-                width: 15%;
+            justify-content: center;
+            align-items: center;
+            .detail_inner {
+                width: 20%;
                 height: 60px;
                 font-size: 20px;
                 cursor: pointer;
                 line-height: 60px;
+                border-radius: 30px;
+                border: 1px solid green;
             }
-            .detail_inner:HOVER{
-                font-size: 30px;
+            .detail_inner:HOVER {
+                font-size: 21px;
+                background: green;
+                color: white;
             }
         }
     }
@@ -202,5 +209,4 @@
     .el-carousel__item:nth-child(2n+1) {
         background-color: #d3dce6;
     }
-
 </style>

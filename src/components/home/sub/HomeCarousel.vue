@@ -88,11 +88,15 @@
         }
         .carousel_hander {
             height: 100px;
-            background: red;
             width: 100%;
             position: absolute;
             margin-top: 100px;
+            opacity: 0.6;
             z-index: 10000;
+            top: 60%;
+            color: white;
+            font-size: 50px;
+            font-weight: 500;
         }
     }
 
