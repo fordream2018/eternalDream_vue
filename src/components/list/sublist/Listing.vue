@@ -51,8 +51,8 @@
         private total1: number = 0;
         private　currentPage: number = 1;
         private　pageSize: number = 10;
-        private tempList: Array = [];
-        private tableData: Array = [];
+        private tempList: Array<Object> = [];
+        private tableData: Array<Object> = [];
 
 
         get getBondsAllList() {
@@ -65,7 +65,6 @@
          * @param row
          */
         private handleEdit(index, row) {
-            debugger;
             const h = this.$createElement;
             this.$msgbox({
                 title: '编辑',
@@ -117,7 +116,7 @@
                 type: 'warning'
             }).then(() => {
                 //
-                listModule.changeTableData(index,row);
+                listModule.changeTableData(index);
                 _this.$message({
                     type: 'success',
                     message: '删除成功!'

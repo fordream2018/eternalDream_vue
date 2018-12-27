@@ -12,10 +12,10 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class MapMain extends Vue {
-    @Prop() private msg!: string;
+    @Prop() private msg: string;
     private zoom:number= 11;
-    private center:array=[109,34.3];
-    private markers:array= [
+    private center:Array<Number>=[109,34.3];
+    private markers:Array<Object>= [
         {
           center: [109,34.3],
           radius: 20,

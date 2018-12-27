@@ -17,12 +17,12 @@
     import {Component, Prop, Vue} from 'vue-property-decorator';
     import * as Three from 'three'
     import {CreateElement} from "vue";
-    import Footter from "../public/footter";
-    import Handder from "../public/handder";
-    import HomeCarousel from "./sub/HomeCarousel";
-    import DemoCase from "./sub/DemoCase";
-    import SolutionTech from "./sub/SolutionTech";
-    import HomeReact from "./sub/HomeReact";
+    import Footter from "@/components/public/footter.vue";
+    import Handder from "@/components/public/handder.vue";
+    import HomeCarousel from "@/components/home/sub/HomeCarousel.vue";
+    import DemoCase from "@/components/home/sub/DemoCase.vue";
+    import SolutionTech from "@/components/home/sub/SolutionTech.vue";
+    import HomeReact from "@/components/home/sub/HomeReact.vue";
 
     @Component({
         components: {

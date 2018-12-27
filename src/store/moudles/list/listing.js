@@ -30,7 +30,7 @@ let ListModule = class ListModule {
     }
     ;
     // actions
-    async changeTableData(index, item) {
+    async changeTableData(index) {
         debugger;
         this.deleteTableData(index);
     }

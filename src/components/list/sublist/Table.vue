@@ -39,9 +39,9 @@
         private total1: number = 0;
         currentPage1: number = 1;
         pageSize: number = 10;
-        private tempList: Array = [];
+        private tempList: Array<Object> = [];
         private emptyText: string = "no data";
-        private bondsAllList: Array=[];
+        private bondsAllList: Array<Object> =[];
 
         handleSizeChange1(pageSize) {
             this.pageSize = pageSize;

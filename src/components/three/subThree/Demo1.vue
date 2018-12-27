@@ -1,6 +1,6 @@
 <template>
     <div class="sub_demo1">
-        <div class="sub_nav" v-on:click="toggle()">
+        <div class="sub_nav">
             <img src="../../../assets/images/fullscreen.png"/>
         </div>
         <fullscreen ref="fullscreen" @change="fullscreenChange">
@@ -52,7 +52,7 @@
         private stats: any;//监视器
         private guiCon:any;//控制器
         /* private rightEffect= new Map<string, Array>();*/
-        private rightEffect: Array = [];
+        private rightEffect: Array<Object> = [];
         private isShowEffect: boolean = false;
         private timer: any;
         private fullscreen: boolean = false;
@@ -90,12 +90,11 @@
             console.log(item.name);
         };
 
-        private toggle() {
+      /*  private toggle() {
             this.$refs['fullscreen'].toggle() // recommended
-        };
+        };*/
 
         private fullscreenChange(fullscreen) {
-            debugger;
             this.renderer.setSize(window.innerWidth, window.innerHeight);
             this.fullscreen = fullscreen
         }

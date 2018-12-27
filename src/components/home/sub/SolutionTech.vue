@@ -34,7 +34,7 @@
     })
     export default class SolutionTech extends Vue {
 
-        private solutionItems: Array = [];
+        private solutionItems: Array<Object> = [];
         private isShowMore: boolean = false;
 
         private init(): void {

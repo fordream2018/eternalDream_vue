@@ -4,12 +4,12 @@
     "module": "esnext",
     "strict": false,
     "jsx": "preserve",
-    "importHelpers": true,
+    "importHelpers": false,
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": false,
-    "sourceMap": false,
+    "sourceMap": true,
     "baseUrl": ".",
     "types": [
       "webpack-env"
@@ -35,5 +35,7 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false
 }

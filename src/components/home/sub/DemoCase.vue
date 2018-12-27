@@ -41,7 +41,7 @@
     })
     export default class DemoCase extends Vue {
 
-        private caseItems: Array = [];
+        private caseItems: Array<Object> = [];
 
         private init(): void {
             this.caseItems = [{

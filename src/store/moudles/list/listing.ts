@@ -36,7 +36,7 @@ class ListModule {
 
     // actions
     @Action
-    async changeTableData(index:number,item:object) {
+    async changeTableData(index:number) {
         debugger;
         this.deleteTableData(index);
     };

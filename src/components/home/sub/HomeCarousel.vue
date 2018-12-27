@@ -15,17 +15,15 @@
 
 <script scoped lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
-    import * as Three from 'three'
-    import {CreateElement} from "vue";
-    import Footter from "../public/footter";
-    import Handder from "../public/handder";
+    import Footter from "@/components/public/footter.vue";
+    import Handder from "@/components/public/handder.vue";
 
     @Component({
         components: {},
     })
     export default class HomeCarousel extends Vue {
         @Prop() private msg: string;
-        private homeItems: Array;
+        private homeItems: Array<Object>;
         private isShowHander: Boolean = false;
 
         private init(): void {

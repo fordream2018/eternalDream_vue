@@ -60,9 +60,10 @@
                 width: 20%;
                 height: 100%;
                 cursor: pointer;
+                transition: all .3s;
             }
             .sub_router:HOVER {
-                font-size: 20px;
+                font-size: 18px;
             }
         }
     }
