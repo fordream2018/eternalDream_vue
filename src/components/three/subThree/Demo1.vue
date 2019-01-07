@@ -3,7 +3,7 @@
         <div class="sub_nav">
             <img src="../../../assets/images/fullscreen.png"/>
         </div>
-        <fullscreen ref="fullscreen" @change="fullscreenChange">
+        <fullscreen refs="fullscreen" @change="fullscreenChange">
             <div class="three_nav" v-on:mouseenter="showEffect()" v-cloak>
                 <transition-group appear tag="ul" v-if="isShowEffect">
                     <!-- 内置方法
@@ -32,7 +32,6 @@
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
     import * as THREE from 'three'
-    import {Map} from "vue-baidu-map/types/map";
     import * as STATUS  from 'three-stats';
     import * as dat from 'dat.gui';
 

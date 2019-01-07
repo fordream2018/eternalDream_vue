@@ -19,7 +19,7 @@
                             <li>工业网站</li>
                             <li>教育网站</li>
                             <li>旅游网站</li>
-                            <li>more</li>
+                            <li>. . .</li>
                         </ul>
                     </div>
 
@@ -30,7 +30,7 @@
                             <li>工业网站</li>
                             <li>教育网站</li>
                             <li>旅游网站</li>
-                            <li>more</li>
+                            <li>. . .</li>
                         </ul>
                     </div>
                     <div class="_list_three _list">
@@ -39,10 +39,9 @@
                 </div>
                 <div class="inner_list_two inner_list">
                     <div _list_t>
-                        <h3>陕西梦之蓝有限公司</h3>
+                        <h3>发现科技有限公司</h3>
                         <ul>
                             <li>服务电话</li>
-                            　　　　　　　　　　　　　　　　　　　
                             <li>15291858911 转　1314</li>
                         </ul>
                     </div>
@@ -50,9 +49,8 @@
                 </div>
             </div>
             <div class="inner_bootm">
-                <p>我的网站 版权所有 2008-2058 xxxxxxx</p>
-                <p>本站内容、图片、视频为网站模板演示数据，如有涉及侵犯版权，请联系我 们提供书面反馈，我们核实后会立即删除</p>
-                <p>Powered by ForDream ©2008-2018  For Dream Tech.</p>
+                <p>发现科技 版权所有 2008-2058</p>
+                <p>Copyright © 2018 Company Name - FaxianTec</p>
             </div>
         </div>
     </div>

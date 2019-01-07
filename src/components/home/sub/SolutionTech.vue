@@ -2,10 +2,7 @@
     <div class="page_solution">
         <div class="solution_hander">
             <h3>解决方案</h3>
-            <p>专业的事情交给专业的人来做     我们为您提供更为专业的解决方案</p>
-        </div>
-        <div class="solution_detail">
-            <div class="detail_inner">了解更多</div>
+            <p>为您提供更为专业的解决方案</p>
         </div>
         <div class="solution_content">
             <el-carousel :interval="5000" type="card" height="350px">
@@ -67,21 +64,12 @@
                     backSrc: require("../../../assets/images/three.gif"),
                     router: "/three"
                 },
-                {
-                    title: "关于",
-                    src: "xxx",
-                    index: 6,
-                    backSrc: require("../../../assets/images/about.gif"),
-                    router: "/about"
-                },
             ];
         }
 
         private enterEvery(item): void {
             this.$router.push(item.router)
         }
-
-
 
         /**
          * 钩子函数调用
@@ -105,7 +93,7 @@
     .page_solution {
         width: 100%;
         height: auto;
-        background: #f2f2f2;
+       /* background: #f2f2f2;*/
         margin-top: 50px;
 
         .solution_hander {
@@ -174,30 +162,6 @@
             img {
                 width: 100%;
                 height: 100%;
-            }
-        }
-
-        .solution_detail {
-            width: 100%;
-            height: 100px;
-            margin-bottom: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            .detail_inner {
-                width: 20%;
-                height: 60px;
-                font-size: 20px;
-                cursor: pointer;
-                line-height: 60px;
-                border-radius: 30px;
-                border: 1px solid green;
-            }
-            .detail_inner:HOVER {
-                font-size: 21px;
-                background: green;
-                color: white;
             }
         }
     }

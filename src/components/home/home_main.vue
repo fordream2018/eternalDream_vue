@@ -1,12 +1,12 @@
 <template>
     <div class="home_page">
         <!--头部-->
-        <Handder />
+        <Handder/>
         <!--走马灯-->
         <HomeCarousel/>
         <!--开发案例-->
         <DemoCase/>
-        <HomeReact/>
+        <TechSupport/>
         <SolutionTech/>
         <Footter/>
     </div>
@@ -22,7 +22,7 @@
     import HomeCarousel from "@/components/home/sub/HomeCarousel.vue";
     import DemoCase from "@/components/home/sub/DemoCase.vue";
     import SolutionTech from "@/components/home/sub/SolutionTech.vue";
-    import HomeReact from "@/components/home/sub/HomeReact.vue";
+    import TechSupport from "@/components/home/sub/TechSupport.vue";
 
     @Component({
         components: {
@@ -31,11 +31,12 @@
             HomeCarousel,
             DemoCase,
             SolutionTech,
-            HomeReact,
+            TechSupport,
         },
     })
     export default class HomeMain extends Vue {
         @Prop() private msg: string;
+
         /**
          * 钩子函数调用
          */

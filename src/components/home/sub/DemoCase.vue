@@ -1,9 +1,9 @@
 <template>
-    <div class="page_content">
-        <div class="content_inner">
+    <div class="page_case">
+        <div class="case_inner">
             <div class="inner_hander">
                 <h3>开发案例精选</h3>
-                <p>经汝之手，晓后世之荣耀，吾等世界终将拨乱反正，永垂不朽</p>
+                <h2> ___ ___ </h2>
             </div>
             <div class="inder_moudle">
                 <div class="moudle_each" v-for="item in 4">
@@ -71,7 +71,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 
-    .page_content {
+    .page_case {
         width: 100%;
         height: auto;
         display: flex;
@@ -79,7 +79,8 @@
         flex-wrap: nowrap;
         justify-content: center;
         font-family: 'Montserrat', sans-serif;
-        .content_inner {
+
+        .case_inner {
             width: 90%;
             height: 100%;
             background: #FFFFFF;
@@ -90,6 +91,11 @@
                     font-size: 30px;
                     font-weight: 500 !important;
                     color: #333333;
+                }
+                h2{
+                    color: blue;
+                    font-size: 20px;
+                    font-weight: 300;
                 }
 
             }
@@ -105,6 +111,7 @@
                     width: 25%;
                     height: 350px;
                     margin-top: 50px;
+                    cursor: pointer;
                     ._inner {
                         width: 90%;
                         height: 100%;
