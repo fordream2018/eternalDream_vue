@@ -5,7 +5,7 @@
             <p>为您提供更为专业的解决方案</p>
         </div>
         <div class="solution_content">
-            <el-carousel :interval="5000" type="card" height="350px">
+            <el-carousel :interval="5000" type="card" height="500px">
                 <el-carousel-item v-for="item in solutionItems" :key="item.index">
                     <div class="carousel-every"
                          v-bind:style="{backgroundImage:'url('+item.backSrc+')',backgroundRepeat:'no-repeat', backgroundSize: '100% 100%'}">
@@ -111,7 +111,7 @@
         }
 
         .solution_content {
-            width: 80%;
+            width: 100%;
             height: auto;
             margin: 0 auto;
             .content_inner {

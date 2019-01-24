@@ -43,18 +43,22 @@
             this.camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 1, 1000);
             this.renderer = new THREE.WebGLRenderer({
                 antialias: true,
+                alpha: true
             });
 
             this.renderer.setSize(window.innerWidth, window.innerHeight);
+            this.renderer.shadowMapEnabled = true;
             this.camera.position.set(0, 0, 8);
             this.camera.lookAt(0, 0, 0);
+
+            //this.renderer.setClearColor(0xffffff, 0);
         }
 
         private initGeometry(): void {
             // step1 init geometry
-            this.geometry = new THREE.BoxGeometry(4, 4, 4);
+            this.geometry = new THREE.BoxGeometry(6, 6, 6);
             // step1 init material
-            this.material = new THREE.MeshBasicMaterial({color: 0x00ff00});
+            this.material = new THREE.MeshBasicMaterial({color: 0x000000});
             // step1 init cube
             this.object = new THREE.Mesh(this.geometry, this.material);
         }
@@ -107,6 +111,8 @@
         //动画效果
         private animate(): void {
             this.stats.update();
+           /* this.object.rotation.x += 10;
+            this.object.rotation.y += 10;*/
             requestAnimationFrame(this.animate);
             this.renderer.render(this.scene, this.camera);
         };

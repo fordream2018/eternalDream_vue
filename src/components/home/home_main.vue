@@ -8,6 +8,7 @@
         <DemoCase/>
         <TechSupport/>
         <SolutionTech/>
+        <AboutUs/>
         <Footter/>
     </div>
 
@@ -23,7 +24,7 @@
     import DemoCase from "@/components/home/sub/DemoCase.vue";
     import SolutionTech from "@/components/home/sub/SolutionTech.vue";
     import TechSupport from "@/components/home/sub/TechSupport.vue";
-
+    import AboutUs from "@/components/home/sub/AboutUs.vue";
     @Component({
         components: {
             Footter,
@@ -32,6 +33,7 @@
             DemoCase,
             SolutionTech,
             TechSupport,
+            AboutUs
         },
     })
     export default class HomeMain extends Vue {
